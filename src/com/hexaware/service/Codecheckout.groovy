@@ -11,6 +11,7 @@ Map specs
     checkout([$class: 'GitSCM',
     branches: [[name: specs.branch]],
     extensions: [],
-    userRemoteConfigs: [[url: specs.repo ]]])
+    userRemoteConfigs: [[url: specs.repo ]]
+    ])
   }
 }
