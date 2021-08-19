@@ -1,4 +1,4 @@
-def Checkout(Map specs) {
-  docheckout = new com.hexaware.service.Checkout(this, specs)
+def checkoutVarFunc(Map specs) {
+  docheckout = new com.hexaware.service.Codecheckout(this, specs)
   docheckout.checkOutFunc(specs)
 }
