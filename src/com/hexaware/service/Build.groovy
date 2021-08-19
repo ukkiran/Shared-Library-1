@@ -1,4 +1,4 @@
-package com.hexaware.service.build.groovy
+package com.hexaware.service
 class Build implements Serializable{
 Script mainScript
 Map specs
