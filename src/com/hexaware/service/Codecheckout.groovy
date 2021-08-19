@@ -8,7 +8,6 @@ Map specs
   this.specs = specs
   }
   def checkOutFunc(Map specs){
-  println "src specs" + specs
     mainScript.checkout([$class: 'GitSCM',
     branches: [[name: specs.branch]],
     extensions: [],
