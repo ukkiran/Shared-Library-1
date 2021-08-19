@@ -8,9 +8,7 @@ Map specs
   this.specs = specs
   }
   def buildFunc(Map specs){
-    mainScript.mvnbuild([echo "hello",
-    sh "mvn -Dmaven.test.failure.ignore=true clean package",
-    userRemoteConfigs: [[url: specs.repo ]]
-    ])
+    mainScript.echo "hello"
+    
   }
 }
