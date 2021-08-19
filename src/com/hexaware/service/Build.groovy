@@ -8,8 +8,8 @@ Map specs
   this.specs = specs
   }
   def buildFunc(Map specs){
-    mainScript.mvnbuild([
-      sh 'mvn -DskipTests clean package'
-    ])
+    mainScript.mvnbuild(
+      sh "mvn -Dmaven.test.failure.ignore=true clean package"
+    )
   }
 }
