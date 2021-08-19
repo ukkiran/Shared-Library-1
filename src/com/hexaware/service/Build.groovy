@@ -1,17 +1,15 @@
 package com.hexaware.service
-class Codecheckout implements Serializable{
+class Build implements Serializable{
 Script mainScript
 Map specs
 
-  def Codecheckout(Script mainScript, Map specs){
+  def Build(Script mainScript, Map specs){
   this.mainScript = mainScript
   this.specs = specs
   }
-  def checkOutFunc(Map specs){
-    mainScript.checkout([$class: 'GitSCM',
-    branches: [[name: specs.branch]],
-    extensions: [],
-    userRemoteConfigs: [[url: specs.repo ]]
+  def buildFunc(Map specs){
+    mainScript.mvnbuild([
+      sh 'mvn -DskipTests clean package'
     ])
   }
 }
