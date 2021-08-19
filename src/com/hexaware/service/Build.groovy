@@ -1,4 +1,4 @@
-package com.hexaware.service
+package com.hexaware.service.build.groovy
 class Build implements Serializable{
 Script mainScript
 Map specs
@@ -9,6 +9,7 @@ Map specs
   }
   def buildFunc(Map specs){
     mainScript.mvnbuild(
+      echo "hello"
       sh "mvn -Dmaven.test.failure.ignore=true clean package"
     )
   }
