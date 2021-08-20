@@ -1,5 +1,6 @@
 def call(){
   node('master') {
+    def specs = [:]
     stage('Specs Checkout'){
       ciFunc.checkoutVarFunc([
       repo: Repo,
