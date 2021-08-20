@@ -16,11 +16,10 @@ def call(){
          specs = specs + ci_template
          println "reading specs file" + specs
           }
+      }
       catch(Exception e) {
          println("Exception: ${e}")
         }
-      throw(e)
-      }
     stage('Code Checkout'){
         ciFunc.checkoutVarFunc([
         repo: specs.scm.repo,
@@ -30,6 +29,7 @@ def call(){
     }   
     stage('Build'){
       ciFunc.build(specs)
+      }
     }
       catch(Exception e) {
         println("Exception: ${e}")
