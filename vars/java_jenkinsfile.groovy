@@ -2,10 +2,10 @@ def call(){
   node('master') {
     stage('Specs Checkout'){
       ciFunc.checkoutVarFunc([
-      repo: params.Repo
-      branch: params.Branch
+      repo: Repo,
+      branch: Branch
       ])
-      def specsDir = "./Specs/$params.Version"
+      def specsDir = "./Specs/$Version"
     
       if(fileExists(specsDir = "ci_template.yaml")){
        ci_template = readYaml file : specsDir + "/ci_template.yaml"
