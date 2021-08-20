@@ -9,9 +9,9 @@ Map specs
   }
   def checkOutFunc(Map specs){
     mainScript.checkout([$class: 'GitSCM',
-    branches: [[name: specs.scm.branch]],
+    branches: [[name: specs.branch]],
     extensions: [],
-    userRemoteConfigs: [[url: specs.scm.repo ]]
+    userRemoteConfigs: [[url: specs.repo ]]
     ])
   }
 }
