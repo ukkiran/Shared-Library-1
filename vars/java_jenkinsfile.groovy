@@ -2,7 +2,7 @@ def call(){
   node('master') {
     def specs = [:]
     stage('Specs Checkout'){
-      cleanWS()
+      cleanWs()
       ciFunc.checkoutVarFunc([
       repo: Repo,
       branch: Branch
