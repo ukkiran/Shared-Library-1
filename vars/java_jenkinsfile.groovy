@@ -16,7 +16,7 @@ def call(){
          specs = specs + ci_template
          println "reading specs file" + specs
           }
-      catch(ExceptionName e) {
+      catch(Exception e) {
          println("Exception: ${e}")
         }
       throw(e)
@@ -31,7 +31,7 @@ def call(){
     stage('Build'){
       ciFunc.build(specs)
     }
-      catch(ExceptionName e) {
+      catch(Exception e) {
         println("Exception: ${e}")
       }
     }
