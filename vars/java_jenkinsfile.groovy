@@ -6,7 +6,7 @@ def call(){
       branch: Branch
       ])
       def specsDir = "./Specs/$Version"
-    
+      println "specs version" + specsDir
       if(fileExists(specsDir = "ci_template.yaml")){
        ci_template = readYaml file : specsDir + "/ci_template.yaml"
        specs = specs + ci_template
