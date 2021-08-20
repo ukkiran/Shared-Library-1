@@ -8,8 +8,8 @@ Map specs
   this.specs = specs
   }
   def buildFunc(Map specs){
-    // mainScript.sh "mvn -Dmaven.test.failure.ignore=true clean package" 
+    mainScript.sh "mvn -Dmaven.test.failure.ignore=true clean package" 
     // def mvnHome = tool name: 'maven', type: 'maven'
-    mainScript.sh "mvn -version"
+    // mainScript.sh "mvn -version"
   }
 }
