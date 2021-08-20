@@ -18,7 +18,7 @@ def call(){
           }
       }
       catch(Exception e) {
-         println("Faisal: ${e}")
+         println("Exception: ${e}")
         }
     stage('Code Checkout'){
         ciFunc.checkoutVarFunc([
@@ -32,7 +32,7 @@ def call(){
       }
     }
       catch(Exception e) {
-        println("Apurba: ${e}")
+        println("Exception: ${e}")
       }
     }
   }
