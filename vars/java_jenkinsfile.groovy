@@ -14,7 +14,10 @@ def call(){
         }
       }
     stage('Code Checkout'){
-      ciFunc.checkoutVarFunc(specs)
+      ciFunc.checkoutVarFunc([
+      repo: specs.scm.repo,
+      branch: specs.scm.branch  
+      ])
     }
     stage('Build'){
       ciFunc.build(specs)
