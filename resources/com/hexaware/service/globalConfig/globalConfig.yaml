@@ -1,0 +1,6 @@
+package com.hexaware.service.globalConfig
+java:
+  maven: 
+    patterns: "**/*.jar, **/*.war, **/*.ear"
+  gradle:
+    patterns: "**/*.jar, **/*.war, **/*.ear"
