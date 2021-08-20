@@ -1,6 +1,7 @@
 def call(){
   node('master') {
     def specs = [:]
+    try {
     stage('Specs Checkout'){
       cleanWs()
       ciFunc.checkoutVarFunc([
@@ -9,20 +10,29 @@ def call(){
       ])
       def specsDir = "./specs/$Version"
       println "specs version" + specsDir
-      if(fileExists(specsDir + "/ci_template.yaml")){
-       ci_template = readYaml file : specsDir + "/ci_template.yaml"
-       specs = specs + ci_template
-       println "reading specs file" + specs
+      try {
+        if(fileExists(specsDir + "/ci_template.yaml")){
+         ci_template = readYaml file : specsDir + "/ci_template.yaml"
+         specs = specs + ci_template
+         println "reading specs file" + specs
+          }
+      catch(ExceptionName e) {
+         println("Exception: ${e}")
         }
+      throw(e)
       }
     stage('Code Checkout'){
-      ciFunc.checkoutVarFunc([
-      repo: specs.scm.repo,
-      branch: specs.scm.branch  
-      ])
-    }
+        ciFunc.checkoutVarFunc([
+        repo: specs.scm.repo,
+        branch: specs.scm.branch  
+          ])
+        }
+    }   
     stage('Build'){
       ciFunc.build(specs)
     }
-  }
-}
+      catch(ExceptionName e) {
+        println("Exception: ${e}")
+      }
+    }
+
