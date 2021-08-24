@@ -18,7 +18,8 @@ def call(){
           }
       }
       catch(Exception e) {
-         println("Exception: ${e}")
+         println "Error in reading specs file : " 
+      throw e
         }
     stage('Code Checkout'){
         ciFunc.checkoutVarFunc([
@@ -32,7 +33,8 @@ def call(){
       }
     }
       catch(Exception e) {
-        println("Exception: ${e}")
+        println "Error in build stage : "
+      throw e
       }
     }
   }
