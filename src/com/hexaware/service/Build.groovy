@@ -9,7 +9,7 @@ Map config
   this.specs = specs
   this.config = config
   }
-  def buildFunc(Map specs){
+  def buildFunc(Map specs, Map config){
     mainScript.sh config.java.maven.command 
   }
 }
