@@ -6,7 +6,7 @@ java:
       command: "test"
   unittest:
     junit:
-      command:
+      command: "mvn verify"
  codecoverage:
     jacoco:
-      command:
+      command: "mvn clean test"
