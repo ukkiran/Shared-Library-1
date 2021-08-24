@@ -7,6 +7,6 @@ java:
   unittest:
     junit:
       command: "mvn verify"
- codecoverage:
+  codecoverage:
     jacoco:
       command: "mvn clean test"
