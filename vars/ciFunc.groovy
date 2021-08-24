@@ -3,8 +3,8 @@ def checkoutVarFunc(Map specs) {
   docheckout = new com.hexaware.service.Codecheckout(this, specs)
   docheckout.checkOutFunc(specs)  
 }
-def build(Map specs) {
-  dobuild = new com.hexaware.service.Build(this, specs)
-  dobuild.buildFunc(specs)
+def build(Map specs, Map config) {
+  dobuild = new com.hexaware.service.Build(this, specs, config)
+  dobuild.buildFunc(specs, config)
   
 }
