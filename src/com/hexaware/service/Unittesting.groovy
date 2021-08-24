@@ -9,7 +9,7 @@ Map config
   this.specs = specs
   this.config = config
   }
-  def UnittestFunc(Map specs, Map config){
+  def unitTestFunc(Map specs, Map config){
     mainScript.sh config.java.unittest.junit.command 
   }
 }
