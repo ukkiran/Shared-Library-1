@@ -9,7 +9,7 @@ Map config
   this.specs = specs
   this.config = config
   }
-  def CodecoveragecheckFunc(Map specs, Map config){
+  def codecoverageCheckFunc(Map specs, Map config){
     mainScript.sh config.java.codecoverage.jacoco.command 
   }
 }
