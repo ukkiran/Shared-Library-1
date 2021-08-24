@@ -5,6 +5,13 @@ def checkoutVarFunc(Map specs) {
 }
 def build(Map specs, Map config) {
   dobuild = new com.hexaware.service.Build(this, specs, config)
-  dobuild.buildFunc(specs, config)
-  
+  dobuild.buildFunc(specs, config) 
+}
+def build(Map specs, Map config) {
+  dobuild = new com.hexaware.service.Build(this, specs, config)
+  dobuild.buildFunc(specs, config) 
+}
+def build(Map specs, Map config) {
+  dobuild = new com.hexaware.service.Build(this, specs, config)
+  dobuild.buildFunc(specs, config) 
 }
