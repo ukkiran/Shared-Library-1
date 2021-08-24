@@ -48,7 +48,7 @@ def call(){
     stage('CodeCoverage'){
       ciFunc.codeCoverageFunc(specs, config)
       }
-   
+    }
     catch(Exception e) {
       println "Error in build stage : " + e.getMessage()
     throw e
