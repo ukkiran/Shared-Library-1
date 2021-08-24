@@ -18,7 +18,7 @@ def call(){
           }
       }
       catch(Exception e) {
-         println "Error in reading specs file : " 
+         println "Error in reading specs file : " + e.getMessage()
       throw e
         }
     stage('Code Checkout'){
@@ -33,7 +33,7 @@ def call(){
       }
     }
       catch(Exception e) {
-        println "Error in build stage : "
+        println "Error in build stage : " + e.getMessage()
       throw e
       }
     }
