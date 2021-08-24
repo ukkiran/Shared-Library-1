@@ -1,5 +1,12 @@
 java:
-  maven: 
-    command: "mvn -Dmaven.test.failure.ignore=true clean package" 
-  gradle:
-    command: "test"
+  build:
+    maven: 
+      command: "mvn -Dmaven.test.failure.ignore=true clean package" 
+    gradle:
+      command: "test"
+  unittest:
+    junit:
+      command:
+ codecoverage:
+    jacoco:
+      command:
