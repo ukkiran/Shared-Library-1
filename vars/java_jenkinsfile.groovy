@@ -42,11 +42,11 @@ def call(){
       }
 
     stage('UnitTest'){
-      ciFunc.unitTestFunc(specs, config)
+      ciFunc.unittest(specs, config)
       }
    
     stage('CodeCoverage'){
-      ciFunc.codeCoverageFunc(specs, config)
+      ciFunc.codecoverage(specs, config)
       }
     }
     catch(Exception e) {
