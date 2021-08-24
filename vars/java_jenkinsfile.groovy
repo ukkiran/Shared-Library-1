@@ -26,6 +26,7 @@ def call(){
         println "reading the global config from resources"
         def request = libraryResource "com/hexaware/service/globalConfig/globalConfig.yaml"
         config = readYaml text: request
+        println "reading config file" + config
       }
      
     stage('Code Checkout'){
