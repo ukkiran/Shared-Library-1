@@ -40,17 +40,17 @@ def call(){
     stage('Build'){
       ciFunc.build(specs, config)
       }
-    }
+
     stage('UnitTest'){
       ciFunc.unitTestFunc(specs, config)
       }
-    }
+   
     stage('CodeCoverage'){
       ciFunc.codeCoverageFunc(specs, config)
       }
-    }
+   
     catch(Exception e) {
-       println "Error in build stage : " + e.getMessage()
+      println "Error in build stage : " + e.getMessage()
     throw e
       }
     }
