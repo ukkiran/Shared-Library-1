@@ -8,10 +8,10 @@ def build(Map specs, Map config) {
   dobuild.buildFunc(specs, config) 
 }
 def unitTestFunc(Map specs, Map config) {
-  dobuild = new com.hexaware.service.Build(this, specs, config)
-  dobuild.UnittestFunc(specs, config) 
+  dounittest = new com.hexaware.service.Unittesting(this, specs, config)
+  dounittest.UnittestFunc(specs, config) 
 }
 def codeCoverageFunc(Map specs, Map config) {
-  dobuild = new com.hexaware.service.Build(this, specs, config)
-  dobuild.CodecoveragecheckFunc(specs, config) 
+  docodecoverage = new com.hexaware.service.Codecoverage(this, specs, config)
+  docodecoverage.CodecoveragecheckFunc(specs, config) 
 }
