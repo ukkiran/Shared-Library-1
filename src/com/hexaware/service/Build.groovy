@@ -10,6 +10,6 @@ Map config
   this.config = config
   }
   def buildFunc(Map specs, Map config){
-    mainScript.sh config.java.maven.command 
+    mainScript.sh config.java.build.maven.command 
   }
 }
