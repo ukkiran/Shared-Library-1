@@ -36,7 +36,7 @@ def call(){
         }
     }   
     stage('Build'){
-      ciFunc.build(specs)
+      ciFunc.build(specs, config)
       }
     }
       catch(Exception e) {
