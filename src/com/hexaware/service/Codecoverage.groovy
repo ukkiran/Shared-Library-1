@@ -11,6 +11,6 @@ Map config
   }
   def codecoverageCheckFunc(Map specs, Map config){
     mainScript.sh config.java.codecoverage.jacoco.command 
-    mainScript.sh publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'surefire-report.html', reportName: 'Surefire Report', reportTitles: ''])
+    //mainScript.sh publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'surefire-report.html', reportName: 'Surefire Report', reportTitles: ''])
   }
 }
