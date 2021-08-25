@@ -10,7 +10,7 @@ Map config
   this.config = config
   }
   def codequalityFunc(Map specs, Map config){
-    mainScript.sh mvn sonar:sonar -Dsonar.projectKey="Petclinic" -Dsonar.host.url="https://sonarcloud.io" -Dsonar.login="74b5ee6411083764b620699a731e7f05f5b12b9b" -Dsonar.projectName="Petclinic"
+    mainScript.sh """ mvn sonar:sonar -Dsonar.projectKey="Petclinic" -Dsonar.host.url="https://sonarcloud.io" -Dsonar.login="74b5ee6411083764b620699a731e7f05f5b12b9b" -Dsonar.projectName="Petclinic" """
      }
   
 }
