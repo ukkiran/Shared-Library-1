@@ -10,12 +10,7 @@ Map config
   this.config = config
   }
   def codecoverageCheckFunc(Map specs, Map config){
-    if (config.java.codecoverage.jacoco.status == true) {
-      mainScript.sh config.java.codecoverage.jacoco.command 
-    } else {
-        println "skipping test"
-    } 
-    //mainScript.sh config.java.codecoverage.jacoco.command 
+    mainScript.sh config.java.codecoverage.jacoco.command 
     mainScript.sh publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'surefire-report.html', reportName: 'Surefire Report', reportTitles: ''])
   }
 }
