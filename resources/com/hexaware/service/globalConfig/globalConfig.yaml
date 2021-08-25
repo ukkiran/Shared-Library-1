@@ -10,4 +10,4 @@ java:
       surefire: "mvn surefire-report:report-only"         
   codecoverage:
     jacoco:
-      command: "mvn clean test"
+      command: "mvn --version"
