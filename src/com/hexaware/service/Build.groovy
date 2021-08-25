@@ -20,6 +20,7 @@ Map config
     }
     else {
     println "Skipping build stage as specs are missing."
+    throw new Exception("stopping the pipeline since build is skipped.")
         }
       }
    
