@@ -15,3 +15,7 @@ def codecoverage(Map specs, Map config) {
   docodecoverage = new com.hexaware.service.Codecoverage(this, specs, config)
   docodecoverage.codecoverageCheckFunc(specs, config) 
 }
+def codequality(Map specs, Map config) {
+  docodequality = new com.hexaware.service.Codequality(this, specs, config)
+  docodequality.codequalityFunc(specs, config) 
+}
