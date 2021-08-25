@@ -10,7 +10,7 @@ Map config
   this.config = config
   }
   def codequalityFunc(Map specs, Map config){
-    mainScript.sh """ mvn sonar:sonar -Dsonar.projectKey=$(specs.codeQuality.projectKey) -Dsonar.host.url=$(config.java.codequality.sonarqube.url) -Dsonar.login=$(config.java.codequality.sonarqube.login) -Dsonar.projectName=$(specs.codeQuality.projectName) -Dsonar.organization=$(config.java.codequality.sonarqube.organization) """
+    mainScript.sh """ mvn sonar:sonar -Dsonar.projectKey=${specs.codeQuality.projectKey} -Dsonar.host.url=${config.java.codequality.sonarqube.url} -Dsonar.login=${config.java.codequality.sonarqube.login} -Dsonar.projectName=${specs.codeQuality.projectName} -Dsonar.organization=${config.java.codequality.sonarqube.organization} """
      }
   
 }
