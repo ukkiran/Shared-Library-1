@@ -10,8 +10,15 @@ Map config
   this.config = config
   }
   def unitTestFunc(Map specs, Map config) {
-    mainScript.sh config.java.unittest.junit.command 
-    mainScript.sh config.java.unittest.junit.surefire
-    mainScript.publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: './target/site/', reportFiles: 'surefire-report.html', reportName: 'UnitTest Report', reportTitles: ''])
+    if (specs.containsKey("unitTest")) {
+        if (specs.unitTest.isUnittestRequired) {
+            mainScript.sh config.java.unittest.junit.command 
+            mainScript.sh config.java.unittest.junit.surefire
+            mainScript.publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: './target/site/', reportFiles: 'surefire-report.html', reportName: 'UnitTest Report', reportTitles: '']) 
+          }   
+    } 
+    else {
+    println "Skipping unit test stage as specs are missing."
+        } 
   }
 }
