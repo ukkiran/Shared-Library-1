@@ -12,5 +12,6 @@ Map config
   def unitTestFunc(Map specs, Map config) {
     mainScript.sh config.java.unittest.junit.command 
     mainScript.sh config.java.unittest.junit.surefire
+    mainScript.sh publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: './target/site/', reportFiles: 'surefire-report.html', reportName: 'UnitTest Report', reportTitles: ''])
   }
 }
