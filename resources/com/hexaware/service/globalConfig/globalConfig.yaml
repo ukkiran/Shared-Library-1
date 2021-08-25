@@ -7,7 +7,9 @@ java:
   unittest:
     junit:
       command: "mvn test"
-      surefire: "mvn surefire-report:report-only"         
+      surefire: "mvn surefire-report:report-only"
+      status: true
   codecoverage:
     jacoco:
       command: "mvn --version"
+      status: false
