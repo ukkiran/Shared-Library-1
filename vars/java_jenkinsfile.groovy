@@ -56,6 +56,15 @@ def call(){
     else {
     println "Skipping code coverage stage because code coverage templates are missing or code coverage stage is disabled." 
       }
+      
+    if (specs.codeQuality.isCodeQualityRequired && specs.containsKey("codeQuality")){  
+    stage('CodeQuality'){
+      ciFunc.codequality(specs, config)
+      }
+    } 
+    else {
+    println "Skipping code quality stage because code quality templates are missing or code quality stage is disabled." 
+      }  
     }   
     catch(Exception e) {
       println "Error in build stage : " + e.getMessage()
