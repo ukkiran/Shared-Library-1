@@ -52,9 +52,10 @@ def call(){
     stage('CodeCoverage'){
       ciFunc.codecoverage(specs, config)
       }
+    } 
     else {
     println "Skipping code coverage stage because code coverage templates are missing or code coverage stage is disabled." 
-    }
+      }
     }   
     catch(Exception e) {
       println "Error in build stage : " + e.getMessage()
