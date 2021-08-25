@@ -16,7 +16,8 @@ Map config
     }
     else {
     println "unsupported tool. Please use Maven."
-     }
+        }
+      }  
     }
     else {
     println "Skipping build stage as specs are missing."
