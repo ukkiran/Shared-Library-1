@@ -10,7 +10,7 @@ Map config
   this.config = config
   }
   def buildFunc(Map specs, Map config){
-    if (specs.containsKey("build") {
+    if (specs.containsKey("build")) {
         if (specs.build.type == "java" && specs.build.tool == "maven") {
           mainScript.sh config.java.build.maven.command 
         }
