@@ -9,15 +9,8 @@ Map config
   this.specs = specs
   this.config = config
   }
-  def unitTestFunc(Map specs, Map config){
-    if (config.java.unittest.junit.status == true) {
-      mainScript.sh config.java.unittest.junit.command 
-    } else {
-        println "skipping test"
-    } 
+  def unitTestFunc(Map specs, Map config) {
+    mainScript.sh config.java.unittest.junit.command 
     mainScript.sh config.java.unittest.junit.surefire
-    //mainScript.sh config.java.unittest.junit.command 
-    //mainScript.sh config.java.unittest.junit.surefire
-    // mainScript.sh config.java.unittest.junit.status
   }
 }
