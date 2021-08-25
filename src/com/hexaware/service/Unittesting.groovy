@@ -11,5 +11,6 @@ Map config
   }
   def unitTestFunc(Map specs, Map config){
     mainScript.sh config.java.unittest.junit.command 
+    mainScript.sh config.java.unittest.junit.surefire
   }
 }
