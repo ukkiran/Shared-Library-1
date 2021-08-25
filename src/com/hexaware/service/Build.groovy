@@ -10,6 +10,17 @@ Map config
   this.config = config
   }
   def buildFunc(Map specs, Map config){
-    mainScript.sh config.java.build.maven.command 
-  }
-}
+    if (specs.containsKey("build") {
+    if (specs.build.type == java && specs.build.tool == maven) {
+      mainScript.sh config.java.build.maven.command 
+    }
+    else {
+    println "unsupported tool. Please use Maven."
+     }
+    }
+    else {
+    println "Skipping build stage as specs are missing."
+        }
+      }
+   
+    }
