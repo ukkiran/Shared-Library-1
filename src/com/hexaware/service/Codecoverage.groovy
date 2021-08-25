@@ -16,6 +16,6 @@ Map config
         println "skipping test"
     } 
     //mainScript.sh config.java.codecoverage.jacoco.command 
-    mainScript.sh publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: ''])
+    mainScript.sh publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'surefire-report.html', reportName: 'Surefire Report', reportTitles: ''])
   }
 }
