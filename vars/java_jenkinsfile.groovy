@@ -40,15 +40,22 @@ def call(){
     stage('Build'){
       ciFunc.build(specs, config)
       }
-
-    stage('UnitTest'){
-      ciFunc.unittest(specs, config)
+      if (specs.unitTest.isUnittestRequired && specs.containsKey("unitTest")){
+      stage('UnitTest'){
+        ciFunc.unittest(specs, config)
       }
-   
+   }
+      else {
+      println "Skipping unit test stage because unit Test templates are missing or Unit Test stage is disabled."
+      }
+    if (specs.codeCoverage.isCodecoverageRequired && specs.containsKey("codeCoverage")){  
     stage('CodeCoverage'){
       ciFunc.codecoverage(specs, config)
       }
+    else {
+    println "Skipping code coverage stage because code coverage templates are missing or code coverage stage is disabled." 
     }
+    }   
     catch(Exception e) {
       println "Error in build stage : " + e.getMessage()
     throw e
