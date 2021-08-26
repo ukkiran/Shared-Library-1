@@ -24,10 +24,13 @@ def artifactupload() {
       def uploadSpec = """{
       "files": [
         {
-          "pattern": "target/*.zip",
+          "pattern": "target/*.jar",
           "target": "default-maven-local/petclinic/jar/"
         }
      ]
     }"""
-     server.upload spec: uploadSpec
+  def buildInfo = server.upload(uploadSpec)  
+  server.publishBuildInfo(buildInfo)
+  //server.upload spec: uploadSpec
+
 }
