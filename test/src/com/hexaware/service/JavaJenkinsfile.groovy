@@ -16,6 +16,6 @@ public class JavaJenkinsfile extends JenkinsPipelineSpecification {
 		when:
 			DefaultPipeline()
 		then:
-			0 * getPipelineMock("ciFunc.unittest.call")(specs)
+			0 * getPipelineMock("ciFunc.unittest.call")()
 	}
 }
