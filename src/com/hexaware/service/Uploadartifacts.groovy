@@ -19,7 +19,7 @@ Map config
           }
        ]
       }"""
-    def buildInfo = server.upload(uploadSpec)  
-    mainScript.server.publishBuildInfo(buildInfo)
+      def buildInfo = server.upload(uploadSpec)  
+      server.publishBuildInfo(buildInfo)
   }
 }
