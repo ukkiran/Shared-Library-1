@@ -1,19 +1,13 @@
-import com.homeaway.devtools.jenkins.testing.JenkinsPipelineSpecification
+import com.lesfurets.jenkins.unit.BasePipelineTest
 
-class JavaJenkinsFile extends JenkinsPipelineSpecification {
-    def javaJenkinsFile = null
-    
-    def isUnittestRequired = true
+class TestExampleJob extends BasePipelineTest {
 
-    def setup() {
-        javaJenkinsFile = loadPipelineScriptForTest("vars/java_jenkinsfile.groovy")
-    }
+        //...
 
-    def "[javaJenkinsFile] will run unit test if isUnittestRequired is true"() {
-        when:
-            javaJenkinsFile isUnittestRequired
-
-        then:
-            1 * getPipelineMock("sh")("mvn --version")
-    }
+        @Test
+        void should_execute_without_errors() throws Exception {
+            def script = loadScript("vars/java_jenkinsfile.groovy")
+            script.call()
+            printCallStack()
+        }
 }
