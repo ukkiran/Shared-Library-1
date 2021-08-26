@@ -10,8 +10,9 @@ Map config
   this.config = config
   }
   def dockerbuildCheckFunc(Map specs, Map config){
-    withCredentials([usernamePassword(credentialsId: 'artifactory', passwordVariable: 'password', usernameVariable: 'username')]) {
+    mainScript.withCredentials([usernamePassword(credentialsId: 'artifactory', passwordVariable: 'password', usernameVariable: 'username')]) {
       mainScript.sh """ docker login -u $username -p $password "https://apurbaa10.jfrog.io/artifactory/default-docker-local/" """
       mainScript.sh config.java.dockerbuild.docker.command
     }
+  }
 }
