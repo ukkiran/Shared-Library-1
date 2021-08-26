@@ -10,6 +10,6 @@ Map config
   this.config = config
   }
   def dockerbuildCheckFunc(Map specs, Map config){
-  
+    mainScript.sh config.java.dockerbuild.docker.command 
   }
 }
