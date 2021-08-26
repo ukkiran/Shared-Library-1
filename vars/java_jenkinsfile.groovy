@@ -67,7 +67,7 @@ def call(){
       }
       
     stage('upload artifact') {
-      ciFunc.artifactupload()
+      ciFunc.artifactupload(specs, config)
       }
     }   
     catch(Exception e) {
