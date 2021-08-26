@@ -8,6 +8,7 @@
     <description>Testing a Pipeline Shared Library with Spock</description>
 
     <repositories>
+        jcenter()  
         <repository>
             <id>jenkins-releases</id>
             <name>Jenkins Releases</name>
