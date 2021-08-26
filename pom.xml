@@ -18,6 +18,12 @@
             <name>jcenter</name>
             <url>https://jcenter.bintray.com</url>
         </repository>
+        <repository>
+            <id>mvnrepository</id>
+            <name>jcenter</name>
+            <url>https://mvnrepository.com/artifact</url>
+        </repository>
+        
     </repositories>
 
     <properties>
