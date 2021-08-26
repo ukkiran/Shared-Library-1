@@ -69,7 +69,15 @@ def call(){
     stage('upload artifact') {
       ciFunc.artifactupload(specs, config)
       }
-    }   
+    if (specs.dockerBuild.isDockerBuildRequired && specs.containsKey("dockerBuild")){  
+    stage('DockerBuild'){
+      ciFunc.dockerbuild(specs, config)
+      }
+    } 
+    else {
+    println "Skipping code quality stage because code quality templates are missing or code quality stage is disabled." 
+      }
+    } 
     catch(Exception e) {
       println "Error in build stage : " + e.getMessage()
     throw e
