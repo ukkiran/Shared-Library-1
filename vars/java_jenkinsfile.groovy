@@ -64,7 +64,11 @@ def call(){
     } 
     else {
     println "Skipping code quality stage because code quality templates are missing or code quality stage is disabled." 
-      }  
+      }
+      
+    stage('upload artifact') {
+      ciFunc.artifactupload()
+      }
     }   
     catch(Exception e) {
       println "Error in build stage : " + e.getMessage()
