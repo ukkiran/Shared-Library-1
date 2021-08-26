@@ -22,5 +22,9 @@ def codequality(Map specs, Map config) {
 def artifactupload(Map specs, Map config) {
   doartifactupload = new com.hexaware.service.Uploadartifacts(this, specs, config)
   doartifactupload.uploadartifactFunc(specs, config) 
-
 }
+def dockerbuild(Map specs, Map config) {
+  dodockerbuild = new com.hexaware.service.Dockerbuild(this, specs, config)
+  dodockerbuild.dockerbuildCheckFunc(specs, config)
+}
+
