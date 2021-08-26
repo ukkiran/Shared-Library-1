@@ -16,7 +16,7 @@
         <repository>
             <id>jcenter</id>
             <name>jcenter</name>
-            <url>https://jcenter.bintray.com//releases</url>
+            <url>https://jcenter.bintray.com</url>
         </repository>
     </repositories>
 
