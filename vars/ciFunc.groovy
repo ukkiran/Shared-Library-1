@@ -19,7 +19,7 @@ def codequality(Map specs, Map config) {
   docodequality = new com.hexaware.service.Codequality(this, specs, config)
   docodequality.codequalityFunc(specs, config) 
 }
-def artifactupload() {
+def artifactupload(Map specs, Map config) {
   doartifactupload = new com.hexaware.service.Uploadartifacts(this, specs, config)
   doartifactupload.uploadartifactFunc(specs, config) 
 
