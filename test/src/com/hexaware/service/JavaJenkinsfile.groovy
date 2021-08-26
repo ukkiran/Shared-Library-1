@@ -9,13 +9,19 @@ public class JavaJenkinsfile extends JenkinsPipelineSpecification {
 		public DummyException(String _message) { super( _message ); }
 	}
 
-
-	def "Does NOT attempt to deploy non-MASTER branch PRODUCTION" () {
+	def setup() {
+		DefaultPipeline = loadPipelineScriptForTest("vars/java_jenkinsfile.groovy")
+		DefaultPipeline.getBinding().setVariable( "scm", null )
+		getPipelineMock("libraryResource")(_) >> {
+			return "Dummy Message"
+		}
+	}
+	def "isUnittestRequired" () {
 		setup:
 			DefaultPipeline.getBinding().setVariable( "unitTest.isUnittestRequired", "true" )
 		when:
 			DefaultPipeline()
 		then:
-			0 * getPipelineMock("ciFunc.unittest.call")(specs)
+			1 * getPipelineMock("ciFunc.unittest.call")(specs)
 	}
 }
