@@ -11,10 +11,6 @@ public class JavaJenkinsfile extends JenkinsPipelineSpecification {
 
 	def setup() {
 		DefaultPipeline = loadPipelineScriptForTest("vars/java_jenkinsfile.groovy")
-		DefaultPipeline.getBinding().setVariable( "scm", null )
-		getPipelineMock("libraryResource")(_) >> {
-			return "Dummy Message"
-		}
 	}
 	def "isUnittestRequired" () {
 		setup:
