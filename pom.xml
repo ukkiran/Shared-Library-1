@@ -67,6 +67,12 @@
     <dependencies>
         
         <dependency>
+            <groupId>com.homeaway.devtools.jenkins</groupId>
+            <artifactId>jenkins-spock</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
             <groupId>com.lesfurets</groupId>
             <artifactId>jenkins-pipeline-unit</artifactId>
             <version>1.9</version>
