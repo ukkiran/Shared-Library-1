@@ -3,7 +3,7 @@ import com.homeaway.devtools.jenkins.testing.JenkinsPipelineSpecification
 class JavaJenkinsFile extends JenkinsPipelineSpecification {
     def javaJenkinsFile = null
     
-    def Map specs = [unitTest:[isUnittestRequired: true]]
+    def isUnittestRequired = true
 
     def setup() {
         javaJenkinsFile = loadPipelineScriptForTest("vars/java_jenkinsfile.groovy")
@@ -11,7 +11,7 @@ class JavaJenkinsFile extends JenkinsPipelineSpecification {
 
     def "[javaJenkinsFile] will run unit test if isUnittestRequired is true"() {
         when:
-            javaJenkinsFile isUnittestRequired == true
+            javaJenkinsFile isUnittestRequired
 
         then:
             1 * getPipelineMock("sh")("mvn --version")
