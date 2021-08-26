@@ -75,7 +75,7 @@ def call(){
       }
     } 
     else {
-    println "Skipping code quality stage because code quality templates are missing or code quality stage is disabled." 
+    println "Skipping docker build stage because docker build templates are missing or docker build quality stage is disabled." 
       }
     } 
     catch(Exception e) {
