@@ -20,17 +20,7 @@ def codequality(Map specs, Map config) {
   docodequality.codequalityFunc(specs, config) 
 }
 def artifactupload() {
-      def server = Artifactory.server 'artifactory'
-      def uploadSpec = """{
-      "files": [
-        {
-          "pattern": "target/*.jar",
-          "target": "default-maven-local/petclinic/jar/"
-        }
-     ]
-    }"""
-  def buildInfo = server.upload(uploadSpec)  
-  server.publishBuildInfo(buildInfo)
-  //server.upload spec: uploadSpec
+  doartifactupload = new com.hexaware.service.Uploadartifacts(this, specs, config)
+  doartifactupload.uploadartifactFunc(specs, config) 
 
 }
