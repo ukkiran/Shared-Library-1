@@ -11,7 +11,8 @@ class JavaJenkinsFile extends JenkinsPipelineSpecification {
 
     def "[javaJenkinsFile] will run unit test if isUnittestRequired is true"() {
         when:
-            javaJenkinsFile specs
+            javaJenkinsFile unitTest.isUnittestRequired == true
+
         then:
             1 * getPipelineMock("sh")("mvn --version")
     }
