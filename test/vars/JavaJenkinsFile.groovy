@@ -7,9 +7,9 @@ class JavaJenkinsFile extends JenkinsPipelineSpecification {
         javaJenkinsFile = loadPipelineScriptForTest("vars/java_jenkinsfile.groovy")
     }
 
-    def "[javaJenkinsFile] will run npm publish if deploy is true"() {
+    def "[javaJenkinsFile] will run unit test if isUnittestRequired is true"() {
         when:
-            javaJenkinsFile deploy: true
+            javaJenkinsFile isUnittestRequired: true
         then:
             1 * getPipelineMock("sh")("mvn --version")
     }
