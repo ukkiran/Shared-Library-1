@@ -18,6 +18,6 @@ public class JavaJenkinsfile extends JenkinsPipelineSpecification {
 		when:
 			DefaultPipeline()
 		then:
-			1 * explicitlyMockPipelineStep("ciFunc.unittest")( _ as Map )
+			1 * explicitlyMockPipelineStep("ciFunc.unittest")( _ as Map, _ as Map )
 	}
 }
