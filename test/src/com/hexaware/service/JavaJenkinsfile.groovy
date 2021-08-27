@@ -14,10 +14,10 @@ public class JavaJenkinsfile extends JenkinsPipelineSpecification {
 	}
 	def "isUnittestRequired" () {
 		setup:
-			DefaultPipeline.getBinding().setVariable( "unitTest.isUnittestRequired", "true" )
+			DefaultPipeline.getBinding().setVariable( "specs.unitTest.isUnittestRequired", "true" )
 		when:
 			DefaultPipeline()
 		then:
-			1 * getPipelineMock("ciFunc.unittest.call")(specs)
+			1 * getPipelineMock("ciFunc.unittest.call")( _ as Map )
 	}
 }
