@@ -18,6 +18,6 @@ public class JavaJenkinsfile extends JenkinsPipelineSpecification {
 		when:
 			DefaultPipeline()
 		then:
-			1 * getPipelineMock("Unittesting")( specs as Map )
+			1 * getPipelineMock("Unittesting.unitTestFunc")( _ as Map )
 	}
 }
