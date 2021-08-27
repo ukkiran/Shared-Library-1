@@ -86,7 +86,7 @@ def call(){
     else {
     println "Skipping docker deploy stage because docker deploy templates are missing or docker deploy stage is disabled." 
       }
-    
+  }
     catch(Exception e) {
       println "Error in build stage : " + e.getMessage()
     throw e
