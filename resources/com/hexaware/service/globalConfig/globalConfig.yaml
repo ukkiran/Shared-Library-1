@@ -18,6 +18,9 @@ java:
       organization: "hexaware"
   dockerbuild:
     docker:
+      authentication: """ docker login -u ${mainScript.username} -p ${mainScript.password} "https://apurbaa10.jfrog.io/artifactory/default-docker-local/" """
       command: "docker build -t petclinic ."
+      tag: "docker tag petclinic apurbaa10.jfrog.io/default-docker-local/petclinic:V1"
+      push: "docker image push apurbaa10.jfrog.io/default-docker-local/petclinic:V1"
   
      
