@@ -53,6 +53,9 @@
         
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        
+        <jenkins.workflow.step.version>2.11</jenkins.workflow.step.version>
+        <jenkins.workflow.cps.version>2.54</jenkins.workflow.cps.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -65,13 +68,23 @@
         </dependencies>
     </dependencyManagement>
     <dependencies>
-        
+        <dependency>
+            <groupId>org.jenkins-ci.plugins.workflow</groupId>
+            <artifactId>workflow-cps</artifactId>
+            <version>${jenkins.workflow.cps.version}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>com.homeaway.devtools.jenkins</groupId>
             <artifactId>jenkins-spock</artifactId>
             <scope>test</scope>
         </dependency>
-        
+        <dependency>
+            <groupId>org.jenkins-ci.plugins.workflow</groupId>
+            <artifactId>workflow-step-api</artifactId>
+            <version>${jenkins.workflow.step.version}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>com.lesfurets</groupId>
             <artifactId>jenkins-pipeline-unit</artifactId>
