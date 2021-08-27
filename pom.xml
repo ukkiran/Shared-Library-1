@@ -56,6 +56,7 @@
         
         <jenkins.workflow.step.version>2.11</jenkins.workflow.step.version>
         <jenkins.workflow.cps.version>2.54</jenkins.workflow.cps.version>
+        <jenkins.symbol.version>1.10</jenkins.symbol.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -68,6 +69,13 @@
         </dependencies>
     </dependencyManagement>
     <dependencies>
+        
+        <dependency>
+            <groupId>org.jenkins-ci</groupId>
+            <artifactId>symbol-annotation</artifactId>
+            <version>${jenkins.symbol.version}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.jenkins-ci.plugins.workflow</groupId>
             <artifactId>workflow-cps</artifactId>
