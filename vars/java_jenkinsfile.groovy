@@ -77,7 +77,6 @@ def call(){
     else {
     println "Skipping docker build stage because docker build templates are missing or docker build stage is disabled." 
       }
-    } 
     if (specs.dockerDeploy.isDockerDeployRequired && specs.containsKey("dockerDeploy")){  
     stage('DockerDeploy'){
       cdFunc.dockerDeploy(specs, config)
@@ -86,7 +85,7 @@ def call(){
     else {
     println "Skipping docker deploy stage because docker deploy templates are missing or docker deploy stage is disabled." 
       }
-  }
+    }
     catch(Exception e) {
       println "Error in build stage : " + e.getMessage()
     throw e
