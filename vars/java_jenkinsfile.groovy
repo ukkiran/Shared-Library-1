@@ -2,13 +2,13 @@ def call(){
   node('master') {
     def specs = [:]
     try {
-    stage('Specs Checkout'){
+    stage('Checkout Specs'){
       cleanWs()
       ciFunc.checkoutVarFunc([
       repo: Repo,
       branch: Branch
       ])
-      stage('reading GlobalConfig & Specs'){ 
+      stage('Read GlobalConfig & Specs'){ 
         try {
           println "reading the specs from Specs repository"
           def specsDir = "./specs/$Version"
@@ -30,7 +30,7 @@ def call(){
             }
       }
      
-    stage('Code Checkout'){
+    stage('Code checkout'){
         ciFunc.checkoutVarFunc([
         repo: specs.scm.repo,
         branch: specs.scm.branch  
