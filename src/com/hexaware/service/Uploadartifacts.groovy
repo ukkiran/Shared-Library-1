@@ -15,7 +15,7 @@ Map config
         "files": [
           {
             "pattern": "target/*.jar",
-            "target": "default-maven-local/"
+            "target": "default-libs-snapshot-local/"
           }
        ]
       }"""
