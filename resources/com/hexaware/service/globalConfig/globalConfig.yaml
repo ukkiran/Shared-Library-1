@@ -18,9 +18,9 @@ java:
       organization: "hexaware"
   dockerbuild:
     docker:
-      dockerurl: "https://apurbaa10.jfrog.io/artifactory/default-docker-local/"
+      dockerurl: "https://ukkiran23.jfrog.io/artifactory/default-libs-snapshot-local/"
       command: "docker build -t petclinic ."
-      tag: "docker tag petclinic apurbaa10.jfrog.io/default-docker-local/petclinic:V1"
-      push: "docker image push apurbaa10.jfrog.io/default-docker-local/petclinic:V1"
+      tag: "docker tag petclinic ukkiran23.jfrog.io/artifactory/default-libs-snapshot-local/petclinic:V1"
+      push: "docker image push ukkiran23.jfrog.io/artifactory/default-libs-snapshot-local/petclinic:V1"
   
      
