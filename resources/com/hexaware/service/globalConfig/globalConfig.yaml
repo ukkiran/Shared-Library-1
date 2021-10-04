@@ -18,7 +18,7 @@ java:
       organization: "hexaware"
   dockerbuild:
     docker:
-      dockerurl: "https://ukkiran23.jfrog.io/artifactory/default-libs-snapshot-local/"
+      dockerurl: "https://ukkiran23.jfrog.io/artifactory/default-libs-snapshot-local/spring-petclinic-2.4.5.jar"
       command: "docker build -t petclinic ."
       tag: "docker tag petclinic ukkiran23.jfrog.io/artifactory/default-libs-snapshot-local/petclinic:V1"
       push: "docker image push ukkiran23.jfrog.io/artifactory/default-libs-snapshot-local/petclinic:V1"
