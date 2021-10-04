@@ -10,12 +10,12 @@ Map config
   this.config = config
   }
   def uploadartifactFunc(Map specs, Map config){
-      def server = mainScript.Artifactory.server 'artifactory'
+      def server = mainScript.Artifactory.server 'artifactory-new'
         def uploadSpec = """{
         "files": [
           {
             "pattern": "target/*.jar",
-            "target": "default-maven-local/petclinic/jar/"
+            "target": "default-maven-local/"
           }
        ]
       }"""
