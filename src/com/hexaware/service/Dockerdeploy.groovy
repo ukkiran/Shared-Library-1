@@ -11,8 +11,7 @@ Map config
   }
   def dockerdeployFunc(Map specs, Map config){
      
-      mainScript.sh """docker pull ukkiran23.jfrog.io/default-docker-local/petclinic:V1
-      docker run -d -p 8085:8085 --name petclinic https://ukkiran23.jfrog.io/artifactory/default-docker-local/petclinic:V1 """
+      mainScript.sh """docker run -d -p 8085:8085 --name petclinic ukkiran23.jfrog.io/default-docker-local/petclinic:V1 """
     
   }
 }
