@@ -10,7 +10,7 @@ Map config
   this.config = config
   }
   def uploadartifactFunc(Map specs, Map config){
-      def server = mainScript.Artifactory.server 'artifactory-new'
+      def server = mainScript.Artifactory.server 'artifactory'
         def uploadSpec = """{
         "files": [
           {
