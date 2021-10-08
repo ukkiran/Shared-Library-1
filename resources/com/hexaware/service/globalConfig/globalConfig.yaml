@@ -14,8 +14,8 @@ java:
   codequality:
     sonarqube:
       url: "https://sonarcloud.io"
-      login: "74b5ee6411083764b620699a731e7f05f5b12b9b"
-      organization: "hexaware"
+      login: "5091423d68c854555ad4d42f5c35cb7bd4d6b8f7"
+      organization: "pet-clinic"
   dockerbuild:
     docker:
       dockerurl: "https://ukkiran23.jfrog.io/artifactory/default-docker-local/"
